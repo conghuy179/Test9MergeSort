@@ -63,16 +63,15 @@ public class Driver {
             }
     }
 
-        private void sort (int[] a, int low, int high)
-        { // Chia array thanh 2 nua: low -> mid va mid + 1 -> high
-            // sort tung nua rieng biet -> merge lai
-            if (high <= low) {
-                return;
-            }
-            int mid = low + (high - low) / 2;
-
-            sort(a, low, mid); // Sort nua trai .
-            sort(a, mid + 1, high); // Sort nua phai.
-            merge(a, low, mid, high); // Merge 2 ben.
+    private void sort(int[] a, int low, int high) { // Chia array thanh 2 nua: low -> mid va mid + 1 -> high
+        // sort tung nua rieng biet -> merge lai
+        if (high <= low) {
+            return;
         }
+        int mid = low + (high - low) / 2;
+
+        sort(a, low, mid); // Sort nua trai .
+        sort(a, mid + 1, high); // Sort nua phai.
+        merge(a, low, mid, high); // Merge 2 ben.
+    }
 }
